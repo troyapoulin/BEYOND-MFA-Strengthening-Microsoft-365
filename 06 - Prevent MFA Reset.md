@@ -31,3 +31,4 @@ If you don’t want to block it outright, require step-up authentication when ma
 - Same as above, but instead of blocking: Under Grant, choose Require multifactor authentication.
 
 This forces a valid MFA challenge before users can access the MFA management portal — even if they’re already signed into M365.
+
