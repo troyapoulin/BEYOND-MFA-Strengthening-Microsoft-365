@@ -6,7 +6,7 @@ The session explores how threat actors target Microsoft 365 environments, how cr
 
 ## Included in this repository are:
 - **Slide Deck** — full presentation slides with embedded resource links.
-- **[Links and Reading List](https://github.com/troyapoulin/BEYOND-MFA-Strengthening-Microsoft-365/blob/main/02_Links-and-Reading-List.md)** — curated Microsoft Learn and community resources for deeper dives into each topic.
+- **Links and Reading List** — curated Microsoft Learn and community resources for deeper dives into each topic.
 - **Reference Guides** — summarized notes on Conditional Access policies, authentication strengths, token protection, and identity risk policies.
 - **Scripts and Tools** — PowerShell snippets and third-party utilities for auditing tenant configurations, reviewing Conditional Access policies, and testing authentication flows.
 
