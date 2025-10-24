@@ -7,6 +7,7 @@ Misconfigured Conditional Access Policies (CAPs) can leave hidden gaps that atta
 **Disclaimer:** The information and scripts provided in this article are for educational and informational purposes only. Use them at your own risk. Always review and test any configuration changes in a controlled environment before applying them to production systems. The author makes no warranties, express or implied, and assumes no liability for any loss or damage resulting from the use of this material.
 
 ---
+
 ## [Troubleshoot Conditional Access Policies with the What If Tool](https://learn.microsoft.com/en-us/entra/identity/conditional-access/what-if-tool)
 The Conditional Access What If policy tool helps you understand the result of Conditional Access policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user or service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
