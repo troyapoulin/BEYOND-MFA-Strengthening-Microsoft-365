@@ -75,7 +75,9 @@ HKLM\SOFTWARE\Policies\Google\Chrome
 
 **Verifying Settings With Powershell**
 ```powershell
+Write-Host "=== Microsoft Edge Password Policies ==="
 Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Edge" | Select BrowserSignin, SyncDisabled
+Write-Host "=== Google Chrome Password Policies ==="
 Get-ItemProperty "HKLM:\SOFTWARE\Policies\Google\Chrome" | Select BrowserSignin, SyncDisabled
 ```
 
@@ -83,13 +85,48 @@ Get-ItemProperty "HKLM:\SOFTWARE\Policies\Google\Chrome" | Select BrowserSignin,
 (Watch for new browser profile or account sign-ins.)
 
 ### GPOs For Browser Password Management
+- Google Chrome Policies will be located at: Computer Configuration → Administrative Templates → Google → Password manager and protection
+- Edge Policies will be located at: Computer Configuration → Administrative Templates → Microsoft Edge → Password manager and protection
 
+##### 1. Disable Saved Passwords:
+- CHROME: Double-click "PasswordManagerEnabled", Set it to Disabled. 
+- EDGE: Double-click "PasswordManagerEnabled", Set it to Disabled. 
 
+##### 2. Don't Offer to Save Passwords:
+- CHROME: Double-click "OfferToSavePasswords", Set it to Disabled. 
+- EDGE: Double-click "OfferToSavePasswords", Set it to Disabled. 
 
+##### 3. Disable Importing Passwords:
+- CHROME: Double-click "ImportPasswords", Set it to Disabled. 
+- EDGE: Double-click "ImportPasswords", Set it to Disabled. 
 
+**Edge Registry Paths**
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge
+"PasswordManagerEnabled"=dword:00000000
+"OfferToSavePasswords"=dword:00000000
+"ImportPasswords"=dword:00000000
+```
+**Edge Registry Paths**
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome
+"PasswordManagerEnabled"=dword:00000000
+"OfferToSavePasswords"=dword:00000000
+"ImportPasswords"=dword:00000000
+```
 
-🔒 4. Additional Hardening Settings
-Setting	Chrome Policy	Edge Policy	Purpose
-Block Developer Mode	Block extensions from being installed in Developer mode	Allow developer mode extensions → set to Disabled	Prevent sideloading
-Block External Extensions	Block external extensions	Block external extensions	Stops injection from local sources
-Safe Browsing	Enable Safe Browsing / Enhanced Safe Browsing	SmartScreen settings → Enable Microsoft Defender SmartScreen	Protects against known malicious extensions
+**Verifying Settings With Powershell**
+```powershell
+Write-Host "=== Microsoft Edge Password Policies ==="
+Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Edge" |
+  Select-Object PasswordManagerEnabled, OfferToSavePasswords, ImportPasswords, SyncDisabled, BrowserSignin
+
+Write-Host "`n=== Google Chrome Password Policies ==="
+Get-ItemProperty "HKLM:\SOFTWARE\Policies\Google\Chrome" |
+  Select-Object PasswordManagerEnabled, OfferToSavePasswords, ImportPasswords, SyncDisabled, BrowserSignin
+```
+
+## Additional Hardening Settings
+- Block Developer Mode	Block extensions from being installed in Developer mode	Allow developer mode extensions → set to Disabled	Prevent sideloading
+- Block External Extensions	Block external extensions	Block external extensions	Stops injection from local sources
+- Safe Browsing	Enable Safe Browsing / Enhanced Safe Browsing	SmartScreen settings → Enable Microsoft Defender SmartScreen	Protects against known malicious extensions
