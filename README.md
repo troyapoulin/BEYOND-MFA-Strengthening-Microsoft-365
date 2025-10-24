@@ -5,7 +5,7 @@ This repository contains the companion materials, scripts, and references for �
 The session explores how threat actors target Microsoft 365 environments, how credentials and tokens are compromised, and what controls most organizations overlook. It emphasizes actionable guidance rather than theory, showing how to translate Microsoft’s best practices, CIS benchmarks, and regulatory expectations into real, enforceable policy.
 
 ## Included in this repository are:
-- **Slide Deck** — full presentation slides with embedded resource links.
+- **Slide Deck** — full presentation slides with embedded resource links. [View Slides](https://theclaxtonbank-my.sharepoint.com/:p:/g/personal/tpoulin_tcbga_bank/EdphbYsk7-FIsFtfOHgtW5gBRAljTB1uaLmPJWaDiqi4bA?e=I2Bheb)
 - **Links and Reading List** — curated Microsoft Learn and community resources for deeper dives into each topic.
 - **Reference Guides** — summarized notes on Conditional Access policies, authentication strengths, token protection, and identity risk policies.
 - **Scripts and Tools** — PowerShell snippets and third-party utilities for auditing tenant configurations, reviewing Conditional Access policies, and testing authentication flows.
